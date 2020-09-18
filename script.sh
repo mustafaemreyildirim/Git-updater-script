@@ -20,6 +20,7 @@ git remote add origin ssh:<repo_link>/$i.git
 find . -type f \( -iname "*" ! -iname "Untitled*" \) |grep -v [[:space:]]| xargs git add	
 git commit -m "scheduled commit"	git push origin master
 done	
+
 finish="$(date)"	
 printf "End: %s\n" "$finish"	
 ) 2> "$HOME/stderr.log" 1>"$HOME/stdout.log"	
