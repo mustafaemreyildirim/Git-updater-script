@@ -15,7 +15,8 @@ printf "Push starts at: %s\n" "$now"
 printf "Start: %s\n\n" "$now"	
 sudo su	
 for i in $(cat /home/repolist)	
-do cd /home/$i	
+do 
+cd /home/$i	
 git remote add origin ssh:<repo_link>/$i.git	
 find . -type f \( -iname "*" ! -iname "Untitled*" \) |grep -v [[:space:]]| xargs git add	
 git commit -m "scheduled commit"	git push origin master
